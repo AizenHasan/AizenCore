@@ -1,0 +1,1719 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="description" content="AIZENCORE is a technology and software development company providing web development, UI/UX design, app development and digital solutions.">
+
+<title>AIZENCORE | Digital Innovation Company</title>
+
+<style>
+
+/* =========================
+   GLOBAL STYLES
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: #080b16;
+    color: #ffffff;
+    line-height: 1.7;
+}
+
+:root {
+    --primary: #795cff;
+    --secondary: #a58bff;
+    --dark: #080b16;
+    --card: #111629;
+    --muted: #a4abc0;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button {
+    font-family: inherit;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+header {
+    background: rgba(8,11,22,0.95);
+    backdrop-filter: blur(15px);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+nav {
+    min-height: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 27px;
+    font-weight: 900;
+    letter-spacing: 2px;
+    color: white;
+}
+
+.logo span {
+    color: var(--primary);
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 35px;
+    list-style: none;
+}
+
+.nav-links a {
+    color: #c4c8d6;
+    font-size: 15px;
+    transition: 0.3s;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: var(--secondary);
+}
+
+.nav-contact {
+    background: var(--primary);
+    color: white !important;
+    padding: 11px 22px;
+    border-radius: 6px;
+}
+
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+/* =========================
+   PAGE NAVIGATION
+========================= */
+
+.page {
+    display: none;
+    animation: fadeIn 0.45s ease;
+}
+
+.page.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* =========================
+   BUTTONS
+========================= */
+
+.btn {
+    display: inline-block;
+    background: var(--primary);
+    color: white;
+    padding: 14px 28px;
+    border-radius: 6px;
+    font-weight: 600;
+    border: 1px solid var(--primary);
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: transparent;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 25px rgba(121,92,255,0.25);
+}
+
+.btn-outline {
+    background: transparent;
+    border: 1px solid #ffffff50;
+}
+
+.btn-outline:hover {
+    background: var(--primary);
+}
+
+/* =========================
+   HOME HERO
+========================= */
+
+.hero {
+    min-height: 620px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    background:
+    radial-gradient(ellipse at 50% 45%,
+    rgba(121,92,255,0.22),
+    transparent 65%);
+}
+
+.hero-content {
+    max-width: 850px;
+    margin: auto;
+    padding: 100px 0;
+}
+
+.hero-tag {
+    display: inline-block;
+    border: 1px solid rgba(165,139,255,0.4);
+    background: rgba(121,92,255,0.1);
+    color: var(--secondary);
+    padding: 8px 20px;
+    border-radius: 30px;
+    font-size: 13px;
+    margin-bottom: 25px;
+}
+
+.hero h1 {
+    font-size: clamp(40px, 7vw, 75px);
+    line-height: 1.15;
+    margin-bottom: 25px;
+}
+
+.gradient-text {
+    background: linear-gradient(90deg,#795cff,#c0aaff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.hero p {
+    max-width: 680px;
+    margin: auto;
+    color: var(--muted);
+    font-size: 18px;
+    margin-bottom: 35px;
+}
+
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+/* =========================
+   SECTION COMMON
+========================= */
+
+section.content-section {
+    padding: 90px 0;
+}
+
+.section-heading {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.section-heading h2 {
+    font-size: clamp(30px, 5vw, 42px);
+    margin-bottom: 12px;
+}
+
+.section-heading p {
+    color: var(--muted);
+    max-width: 650px;
+    margin: auto;
+}
+
+.small-title {
+    color: var(--secondary);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+}
+
+/* =========================
+   HOME HIGHLIGHTS
+========================= */
+
+.highlights {
+    background: #0d1223;
+}
+
+.highlight-grid {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 25px;
+}
+
+.highlight-card {
+    background: var(--card);
+    padding: 35px;
+    border: 1px solid rgba(255,255,255,0.07);
+    border-radius: 12px;
+    transition: 0.3s;
+}
+
+.highlight-card:hover {
+    transform: translateY(-7px);
+    border-color: var(--primary);
+}
+
+.highlight-card h3 {
+    margin: 15px 0;
+}
+
+.highlight-card p {
+    color: var(--muted);
+}
+
+.icon {
+    font-size: 35px;
+}
+
+/* =========================
+   HOME PORTFOLIO
+========================= */
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 25px;
+}
+
+.project-card {
+    background: var(--card);
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid rgba(255,255,255,0.07);
+}
+
+.project-image {
+    height: 210px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg,#34266d,#795cff);
+    font-size: 24px;
+    font-weight: 800;
+    text-align: center;
+    padding: 20px;
+}
+
+.project-info {
+    padding: 25px;
+}
+
+.project-info p {
+    color: var(--muted);
+    margin-top: 8px;
+}
+
+/* =========================
+   ABOUT PAGE
+========================= */
+
+.page-banner {
+    padding: 90px 0;
+    text-align: center;
+    background:
+    radial-gradient(ellipse at center,
+    rgba(121,92,255,0.2),
+    transparent 70%);
+}
+
+.page-banner h1 {
+    font-size: clamp(38px,6vw,55px);
+}
+
+.page-banner p {
+    color: var(--muted);
+    margin-top: 12px;
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.about-text h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.about-text p {
+    color: var(--muted);
+    margin-bottom: 18px;
+}
+
+.about-visual {
+    min-height: 350px;
+    background: linear-gradient(135deg,#261d55,#795cff);
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: clamp(25px,4vw,42px);
+    font-weight: 900;
+    letter-spacing: 3px;
+}
+
+/* =========================
+   SERVICES
+========================= */
+
+.services-section {
+    background: #0d1223;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 22px;
+}
+
+.service-card {
+    padding: 30px;
+    background: var(--card);
+    border-radius: 12px;
+    border: 1px solid rgba(255,255,255,0.07);
+    transition: 0.3s;
+}
+
+.service-card:hover {
+    transform: translateY(-6px);
+    border-color: var(--primary);
+}
+
+.service-card h3 {
+    margin: 15px 0 10px;
+    color: var(--secondary);
+}
+
+.service-card p {
+    color: var(--muted);
+    font-size: 14px;
+}
+
+/* =========================
+   WHY CHOOSE US
+========================= */
+
+.why-grid {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 20px;
+}
+
+.why-card {
+    background: var(--card);
+    padding: 25px;
+    border-radius: 10px;
+}
+
+.why-card h3 {
+    margin-bottom: 8px;
+}
+
+.why-card p {
+    color: var(--muted);
+}
+
+/* =========================
+   CONTACT PAGE
+========================= */
+
+.contact-layout {
+    display: grid;
+    grid-template-columns: 0.85fr 1.15fr;
+    gap: 45px;
+    align-items: start;
+}
+
+.contact-info h2 {
+    font-size: 32px;
+    margin-bottom: 15px;
+}
+
+.contact-info > p {
+    color: var(--muted);
+    margin-bottom: 30px;
+}
+
+.contact-card {
+    background: var(--card);
+    border: 1px solid rgba(255,255,255,0.08);
+    padding: 23px;
+    border-radius: 10px;
+    margin-bottom: 18px;
+}
+
+.contact-card h3 {
+    color: var(--secondary);
+    font-size: 16px;
+    margin-bottom: 8px;
+}
+
+.contact-card p,
+.contact-card a {
+    color: #d3d5e2;
+    word-break: break-word;
+}
+
+.contact-card a:hover {
+    color: var(--secondary);
+}
+
+.contact-form {
+    background: var(--card);
+    padding: 35px;
+    border-radius: 12px;
+    border: 1px solid rgba(255,255,255,0.08);
+}
+
+.contact-form h2 {
+    margin-bottom: 25px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: #e1e3ef;
+    font-weight: 600;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 14px;
+    background: #080b16;
+    border: 1px solid #30364e;
+    border-radius: 6px;
+    color: white;
+    font-family: inherit;
+    font-size: 15px;
+    outline: none;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: var(--primary);
+}
+
+.form-group textarea {
+    min-height: 140px;
+    resize: vertical;
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 6px;
+    background: var(--primary);
+    color: white;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.submit-btn:hover {
+    background: #6245df;
+}
+
+/* =========================
+   CTA SECTION
+========================= */
+
+.cta {
+    background: linear-gradient(120deg,#31236c,#795cff);
+    text-align: center;
+    padding: 65px 20px;
+}
+
+.cta h2 {
+    font-size: 35px;
+    margin-bottom: 15px;
+}
+
+.cta p {
+    color: #e2ddff;
+    margin-bottom: 25px;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    background: #050710;
+    padding: 55px 0 25px;
+    border-top: 1px solid rgba(255,255,255,0.08);
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr;
+    gap: 40px;
+    margin-bottom: 35px;
+}
+
+.footer-about p {
+    color: var(--muted);
+    margin-top: 15px;
+    max-width: 350px;
+}
+
+.footer-column h3 {
+    margin-bottom: 15px;
+    font-size: 17px;
+}
+
+.footer-column a {
+    display: block;
+    color: var(--muted);
+    margin-bottom: 9px;
+    transition: 0.3s;
+    word-break: break-word;
+}
+
+.footer-column a:hover {
+    color: var(--secondary);
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(255,255,255,0.1);
+    padding-top: 22px;
+    text-align: center;
+    color: #858ba1;
+    font-size: 13px;
+}
+
+/* =========================
+   RESPONSIVE DESIGN
+========================= */
+
+@media(max-width:900px) {
+
+    .highlight-grid,
+    .services-grid,
+    .project-grid {
+        grid-template-columns: repeat(2,1fr);
+    }
+
+    .contact-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .about-grid {
+        gap: 30px;
+    }
+
+}
+
+@media(max-width:768px) {
+
+    nav {
+        min-height: 70px;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background: #0d1223;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        padding: 15px 5%;
+        border-bottom: 1px solid #30364e;
+    }
+
+    .nav-links.open {
+        display: flex;
+    }
+
+    .nav-links li a {
+        display: block;
+        padding: 12px;
+    }
+
+    .nav-contact {
+        display: inline-block !important;
+        width: fit-content;
+    }
+
+    .about-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .highlight-grid,
+    .services-grid,
+    .project-grid,
+    .why-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    section.content-section {
+        padding: 65px 0;
+    }
+
+    .hero {
+        min-height: 550px;
+    }
+
+    .hero-content {
+        padding: 80px 0;
+    }
+
+    .contact-form {
+        padding: 22px;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- =========================
+     HEADER / NAVIGATION
+========================= -->
+
+<header>
+
+<div class="container">
+
+<nav>
+
+<a href="#home" class="logo">
+AIZEN<span>CORE</span>
+</a>
+
+<button class="menu-toggle"
+id="menu-toggle"
+aria-label="Open navigation"
+aria-expanded="false">
+☰
+</button>
+
+<ul class="nav-links" id="nav-links">
+
+<li>
+<a href="#home" class="nav-link active">Home</a>
+</li>
+
+<li>
+<a href="#about" class="nav-link">About & Services</a>
+</li>
+
+<li>
+<a href="#contact" class="nav-link nav-contact">Contact Us</a>
+</li>
+
+</ul>
+
+</nav>
+
+</div>
+
+</header>
+
+
+<!-- =========================
+     PAGE 1: HOME
+========================= -->
+
+<main>
+
+<div class="page active" id="home">
+
+<section class="hero">
+
+<div class="container">
+
+<div class="hero-content">
+
+<div class="hero-tag">
+WELCOME TO AIZENCORE
+</div>
+
+<h1>
+Building The <span class="gradient-text">Digital Future</span>
+</h1>
+
+<p>
+We transform ideas into powerful digital experiences.
+From modern websites to custom software solutions,
+AIZENCORE helps businesses grow through technology,
+creativity and innovation.
+</p>
+
+<div class="hero-buttons">
+
+<a href="#about" class="btn">
+Explore Our Services
+</a>
+
+<a href="#contact" class="btn btn-outline">
+Start A Project
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- HOME HIGHLIGHTS -->
+
+<section class="content-section highlights">
+
+<div class="container">
+
+<div class="section-heading">
+
+<div class="small-title">WHAT WE DO</div>
+
+<h2>Technology Meets Creativity</h2>
+
+<p>
+We combine innovative thinking with modern technology
+to create meaningful digital solutions.
+</p>
+
+</div>
+
+<div class="highlight-grid">
+
+<div class="highlight-card">
+
+<div class="icon">💻</div>
+
+<h3>Web Development</h3>
+
+<p>
+Responsive, modern and professional websites
+built to help businesses establish their online presence.
+</p>
+
+</div>
+
+<div class="highlight-card">
+
+<div class="icon">🎨</div>
+
+<h3>Creative Design</h3>
+
+<p>
+Beautiful interfaces and thoughtful user experiences
+that make digital products memorable.
+</p>
+
+</div>
+
+<div class="highlight-card">
+
+<div class="icon">⚙️</div>
+
+<h3>Software Solutions</h3>
+
+<p>
+Smart digital solutions designed to simplify
+business operations and improve productivity.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- HOME PORTFOLIO -->
+
+<section class="content-section">
+
+<div class="container">
+
+<div class="section-heading">
+
+<div class="small-title">OUR WORK</div>
+
+<h2>What We Can Create</h2>
+
+<p>
+Explore examples of the digital solutions
+AIZENCORE can develop for your business.
+</p>
+
+</div>
+
+<div class="project-grid">
+
+<div class="project-card">
+
+<div class="project-image">
+WEB DESIGN
+</div>
+
+<div class="project-info">
+
+<h3>Business Websites</h3>
+
+<p>
+Professional websites designed to build
+your brand's digital identity.
+</p>
+
+</div>
+
+</div>
+
+<div class="project-card">
+
+<div class="project-image">
+E-COMMERCE
+</div>
+
+<div class="project-info">
+
+<h3>Online Stores</h3>
+
+<p>
+Modern online shopping experiences
+for growing businesses.
+</p>
+
+</div>
+
+</div>
+
+<div class="project-card">
+
+<div class="project-image">
+UI / UX DESIGN
+</div>
+
+<div class="project-info">
+
+<h3>Digital Experiences</h3>
+
+<p>
+Clean interfaces and intuitive designs
+for modern digital products.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- CTA -->
+
+<section class="cta">
+
+<h2>Have An Idea?</h2>
+
+<p>
+Let's turn your vision into something extraordinary.
+</p>
+
+<a href="#contact" class="btn">
+Work With AIZENCORE
+</a>
+
+</section>
+
+</div>
+
+
+<!-- =========================
+     PAGE 2: ABOUT & SERVICES
+========================= -->
+
+<div class="page" id="about">
+
+<section class="page-banner">
+
+<div class="container">
+
+<div class="small-title">WHO WE ARE</div>
+
+<h1>About <span class="gradient-text">AIZENCORE</span></h1>
+
+<p>
+Innovation, creativity and technology
+working together.
+</p>
+
+</div>
+
+</section>
+
+
+<!-- ABOUT -->
+
+<section class="content-section">
+
+<div class="container">
+
+<div class="about-grid">
+
+<div class="about-text">
+
+<div class="small-title">ABOUT OUR COMPANY</div>
+
+<h2>Creating Digital Solutions That Matter</h2>
+
+<p>
+AIZENCORE is a technology-focused brand
+dedicated to developing modern digital products,
+creative designs and software solutions.
+</p>
+
+<p>
+Our vision is to help individuals and businesses
+bring their ideas to life through technology.
+We believe that every great digital experience
+starts with a great idea.
+</p>
+
+<p>
+From website development to creative design,
+we aim to deliver solutions that combine
+functionality, quality and innovation.
+</p>
+
+<a href="#contact" class="btn">
+Get In Touch
+</a>
+
+</div>
+
+<div class="about-visual">
+AIZENCORE
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- SERVICES -->
+
+<section class="content-section services-section">
+
+<div class="container">
+
+<div class="section-heading">
+
+<div class="small-title">WHAT WE OFFER</div>
+
+<h2>Our Services</h2>
+
+<p>
+Digital services designed to help
+your business move forward.
+</p>
+
+</div>
+
+<div class="services-grid">
+
+<div class="service-card">
+
+<div class="icon">💻</div>
+
+<h3>Website Development</h3>
+
+<p>
+Custom responsive websites,
+business websites and modern web applications.
+</p>
+
+</div>
+
+<div class="service-card">
+
+<div class="icon">📱</div>
+
+<h3>App Development</h3>
+
+<p>
+Modern mobile application solutions
+designed around user needs.
+</p>
+
+</div>
+
+<div class="service-card">
+
+<div class="icon">🎨</div>
+
+<h3>UI/UX Design</h3>
+
+<p>
+Creative user interfaces and
+user experiences for digital products.
+</p>
+
+</div>
+
+<div class="service-card">
+
+<div class="icon">⚙️</div>
+
+<h3>Software Development</h3>
+
+<p>
+Custom software and digital tools
+for modern business requirements.
+</p>
+
+</div>
+
+<div class="service-card">
+
+<div class="icon">🛒</div>
+
+<h3>E-Commerce Development</h3>
+
+<p>
+Professional online stores
+with modern shopping experiences.
+</p>
+
+</div>
+
+<div class="service-card">
+
+<div class="icon">🚀</div>
+
+<h3>Digital Solutions</h3>
+
+<p>
+Technology-driven solutions
+to improve your digital presence.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- WHY CHOOSE US -->
+
+<section class="content-section">
+
+<div class="container">
+
+<div class="section-heading">
+
+<div class="small-title">OUR APPROACH</div>
+
+<h2>Why Choose AIZENCORE?</h2>
+
+<p>
+We focus on creating meaningful
+digital experiences.
+</p>
+
+</div>
+
+<div class="why-grid">
+
+<div class="why-card">
+
+<h3>✦ Creative Thinking</h3>
+
+<p>
+We approach every project with creativity
+and a focus on solving real problems.
+</p>
+
+</div>
+
+<div class="why-card">
+
+<h3>✦ Modern Technology</h3>
+
+<p>
+We use modern development approaches
+to create reliable digital experiences.
+</p>
+
+</div>
+
+<div class="why-card">
+
+<h3>✦ User-Focused Design</h3>
+
+<p>
+We prioritize usability, accessibility
+and intuitive experiences.
+</p>
+
+</div>
+
+<div class="why-card">
+
+<h3>✦ Quality & Reliability</h3>
+
+<p>
+We aim to deliver professional solutions
+with attention to detail.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<section class="cta">
+
+<h2>Let's Build Something Great</h2>
+
+<p>
+Your next digital project starts here.
+</p>
+
+<a href="#contact" class="btn">
+Contact AIZENCORE
+</a>
+
+</section>
+
+</div>
+
+
+<!-- =========================
+     PAGE 3: CONTACT
+========================= -->
+
+<div class="page" id="contact">
+
+<section class="page-banner">
+
+<div class="container">
+
+<div class="small-title">GET IN TOUCH</div>
+
+<h1>Let's <span class="gradient-text">Connect</span></h1>
+
+<p>
+Have a project or an idea?
+We would love to hear from you.
+</p>
+
+</div>
+
+</section>
+
+
+<section class="content-section">
+
+<div class="container">
+
+<div class="contact-layout">
+
+
+<!-- CONTACT INFORMATION -->
+
+<div class="contact-info">
+
+<div class="small-title">CONTACT INFORMATION</div>
+
+<h2>Let's Talk About Your Project</h2>
+
+<p>
+Reach out to AIZENCORE for website development,
+software solutions, design and other digital services.
+</p>
+
+
+<div class="contact-card">
+
+<h3>📞 Phone Number</h3>
+
+<a href="tel:+8801833362126">
++8801833362126
+</a>
+
+</div>
+
+
+<div class="contact-card">
+
+<h3>✉️ Business Email</h3>
+
+<a href="mailto:infoaizencore@gmail.com">
+infoaizencore@gmail.com
+</a>
+
+</div>
+
+
+<div class="contact-card">
+
+<h3>💬 WhatsApp</h3>
+
+<a href="https://wa.me/8801833362126"
+target="_blank"
+rel="noopener noreferrer">
+Chat With AIZENCORE
+</a>
+
+</div>
+
+
+<div class="contact-card">
+
+<h3>🌐 Company</h3>
+
+<p>AIZENCORE</p>
+
+<p>Innovate. Develop. Transform.</p>
+
+</div>
+
+</div>
+
+
+<!-- CONTACT FORM -->
+
+<form class="contact-form" id="contact-form">
+
+<h2>Send Us A Message</h2>
+
+<div class="form-group">
+
+<label for="name">Full Name</label>
+
+<input
+type="text"
+id="name"
+name="name"
+placeholder="Enter your full name"
+required>
+
+</div>
+
+
+<div class="form-group">
+
+<label for="email">Email Address</label>
+
+<input
+type="email"
+id="email"
+name="email"
+placeholder="Enter your email"
+required>
+
+</div>
+
+
+<div class="form-group">
+
+<label for="subject">Subject</label>
+
+<input
+type="text"
+id="subject"
+name="subject"
+placeholder="What is your project about?"
+required>
+
+</div>
+
+
+<div class="form-group">
+
+<label for="message">Your Message</label>
+
+<textarea
+id="message"
+name="message"
+placeholder="Tell us about your project..."
+required></textarea>
+
+</div>
+
+
+<button type="submit" class="submit-btn">
+Send Message →
+</button>
+
+<p id="form-message"
+style="margin-top:15px;color:#a58bff;"
+role="status"></p>
+
+</form>
+
+</div>
+
+</div>
+
+</section>
+
+
+<section class="cta">
+
+<h2>Ready To Start Your Project?</h2>
+
+<p>
+Get in touch with AIZENCORE today.
+</p>
+
+<a href="mailto:infoaizencore@gmail.com" class="btn">
+Email Us
+</a>
+
+</section>
+
+</div>
+
+</main>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+<div class="container">
+
+<div class="footer-content">
+
+
+<div class="footer-about">
+
+<a href="#home" class="logo">
+AIZEN<span>CORE</span>
+</a>
+
+<p>
+Innovate. Develop. Transform.
+
+We create modern digital experiences
+and technology-driven solutions.
+</p>
+
+</div>
+
+
+<div class="footer-column">
+
+<h3>Quick Links</h3>
+
+<a href="#home">Home</a>
+
+<a href="#about">About & Services</a>
+
+<a href="#contact">Contact</a>
+
+</div>
+
+
+<div class="footer-column">
+
+<h3>Contact Information</h3>
+
+<a href="tel:+8801833362126">
++8801833362126
+</a>
+
+<a href="mailto:infoaizencore@gmail.com">
+infoaizencore@gmail.com
+</a>
+
+<a href="https://wa.me/8801833362126"
+target="_blank"
+rel="noopener noreferrer">
+WhatsApp
+</a>
+
+</div>
+
+
+</div>
+
+
+<div class="footer-bottom">
+
+<p>
+&copy; <span id="year"></span>
+AIZENCORE. All Rights Reserved.
+</p>
+
+</div>
+
+</div>
+
+</footer>
+
+
+<!-- =========================
+     JAVASCRIPT
+========================= -->
+
+<script>
+
+/* PAGE NAVIGATION */
+
+const pages = document.querySelectorAll(".page");
+
+const navLinks = document.querySelectorAll(".nav-link");
+
+const menuToggle = document.getElementById("menu-toggle");
+
+const navMenu = document.getElementById("nav-links");
+
+
+function showPage(pageId) {
+
+    const targetPage = document.getElementById(pageId);
+
+    if (!targetPage) {
+        return;
+    }
+
+    // Hide all pages
+
+    pages.forEach(page => {
+        page.classList.remove("active");
+    });
+
+    // Show selected page
+
+    targetPage.classList.add("active");
+
+    // Update navigation
+
+    navLinks.forEach(link => {
+
+        link.classList.remove("active");
+
+        if (link.getAttribute("href") === "#" + pageId) {
+            link.classList.add("active");
+        }
+
+    });
+
+    // Close mobile navigation
+
+    navMenu.classList.remove("open");
+
+    menuToggle.textContent = "☰";
+
+    menuToggle.setAttribute("aria-expanded", "false");
+
+    // Start at top
+
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+
+}
+
+
+/* HANDLE NAVIGATION LINKS */
+
+document.querySelectorAll('a[href^="#"]').forEach(link => {
+
+    link.addEventListener("click", function(event) {
+
+        const pageId = this.getAttribute("href").substring(1);
+
+        if (!document.getElementById(pageId)) {
+            return;
+        }
+
+        event.preventDefault();
+
+        history.pushState(null, "", "#" + pageId);
+
+        showPage(pageId);
+
+    });
+
+});
+
+
+/* BROWSER BACK AND FORWARD */
+
+window.addEventListener("popstate", function() {
+
+    const pageId = location.hash.substring(1) || "home";
+
+    showPage(pageId);
+
+});
+
+
+/* MOBILE MENU */
+
+menuToggle.addEventListener("click", function() {
+
+    const isOpen = navMenu.classList.toggle("open");
+
+    menuToggle.textContent = isOpen ? "✕" : "☰";
+
+    menuToggle.setAttribute("aria-expanded", isOpen);
+
+});
+
+
+/* LOAD CORRECT PAGE */
+
+function loadPage() {
+
+    const pageId = location.hash.substring(1) || "home";
+
+    showPage(pageId);
+
+}
+
+loadPage();
+
+
+/* COPYRIGHT YEAR */
+
+document.getElementById("year").textContent =
+    new Date().getFullYear();
+
+
+/* CONTACT FORM */
+
+const contactForm = document.getElementById("contact-form");
+
+const formMessage = document.getElementById("form-message");
+
+contactForm.addEventListener("submit", function(event) {
+
+    event.preventDefault();
+
+    if (!contactForm.checkValidity()) {
+
+        contactForm.reportValidity();
+
+        return;
+
+    }
+
+    const name = document.getElementById("name").value.trim();
+
+    const email = document.getElementById("email").value.trim();
+
+    const subject = document.getElementById("subject").value.trim();
+
+    const message = document.getElementById("message").value.trim();
+
+    const emailSubject = encodeURIComponent(
+        "AIZENCORE Website Inquiry: " + subject
+    );
+
+    const emailBody = encodeURIComponent(
+        "Name: " + name +
+        "\nEmail: " + email +
+        "\nSubject: " + subject +
+        "\n\nMessage:\n" + message
+    );
+
+    const mailtoLink =
+        "mailto:infoaizencore@gmail.com" +
+        "?subject=" + emailSubject +
+        "&body=" + emailBody;
+
+    formMessage.textContent =
+        "Opening your email application to send your message...";
+
+    window.location.href = mailtoLink;
+
+});
+
+</script>
+
+</body>
+</html>
